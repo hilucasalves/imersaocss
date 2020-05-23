@@ -39,6 +39,7 @@ header {
     position: fixed;
     top: 0;
     width: 100vw;
+    z-index: 1;
 }
 
 .menu ul {
@@ -89,16 +90,46 @@ a:hover {
     font-style: italic;
 }
 
-.portifolio, .contato {
+.sobre,
+.portifolio,
+.contato {
     color: #FFFAFA;
     padding: 1em;
     min-height: 100vh;
 }
 
-.portifolio h2, .contato h2 {
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.sobre h2,
+.portifolio h2,
+.contato h2 {
     margin-top: 2em;
     margin-bottom: 3em;
     text-align: center;
+}
+
+.sobre figure {
+    float: right;
+    margin-left: 1em;
+}
+
+.sobre figure img {
+    width: 250px;
+    height: 250px;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.sobre p {
+    color: whitesmoke;
+    text-indent: 2em;
+    text-align: justify;
+    margin-bottom: 1.4em;
 }
 
 .portifolio .grid {
