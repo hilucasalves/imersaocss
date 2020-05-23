@@ -28,7 +28,7 @@ body {
 }
 
 header {
-    height: 50vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,6 +60,11 @@ header {
     background-color: #4682B4;
 }
 
+.menu a:active {
+    color: #4682B4;
+    background-color: #B0C4DE;
+}
+
 a {
     color: #4682B4;
     text-decoration: none;
@@ -84,14 +89,15 @@ a:hover {
     font-style: italic;
 }
 
-.portifolio {
+.portifolio, .contato {
     color: #FFFAFA;
     padding: 1em;
-    height: 50vh;
+    min-height: 100vh;
 }
 
-.portifolio h2 {
-    margin-bottom: 1em;
+.portifolio h2, .contato h2 {
+    margin-top: 2em;
+    margin-bottom: 3em;
     text-align: center;
 }
 
@@ -118,8 +124,37 @@ a:hover {
 .img-portifolio {
     width: 200px;
     height: 200px;
+    transition: transform 300ms;
+}
+
+.img-portifolio:hover {
+    transform: scale(0.9);
 }
 
 figcaption {
     color: #ffffff;
+}
+
+.contato {
+    text-align: center;
+}
+
+.contato .grid {
+    display: grid;
+    gap: 6em;
+    justify-content: center;
+    grid-template-columns: repeat(4, 100px);
+}
+
+.contato .grid a {
+    transition: transform 300ms;
+}
+
+.contato .grid a:hover {
+    transform: scale(0.9) rotate(15deg);
+}
+
+.contato .grid a img {
+    width: 100px;
+    height: 100px;
 }
