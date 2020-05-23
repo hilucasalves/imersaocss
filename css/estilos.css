@@ -6,9 +6,9 @@
 }
 
 body {
-    background-image: url("./../img/background-blue.jpg");
+    background-color: #4682B4;
     background-size: 100vw 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     height: 100vh;
     font-size: 12px;
 }
@@ -28,7 +28,7 @@ body {
 }
 
 header {
-    height: 100vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +63,6 @@ header {
 a {
     color: #4682B4;
     text-decoration: none;
-
 }
 
 a:hover {
@@ -74,6 +73,7 @@ a:hover {
 .site-subtitle {
     color: #FFFAFA;
     text-align: center;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .site-title {
@@ -84,7 +84,42 @@ a:hover {
     font-style: italic;
 }
 
-.img-portfolio {
-    width: 180px;
-    height: 180px;
+.portifolio {
+    color: #FFFAFA;
+    padding: 1em;
+    height: 50vh;
+}
+
+.portifolio h2 {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.portifolio .grid {
+    display: grid;
+    gap: 4em;
+    justify-content: center;
+}
+
+@media (min-width: 560px) {
+    .portifolio .grid {
+        grid-template-columns: repeat(3, 200px);
+    }
+}
+
+.portifolio figure {
+    text-align: center;
+}
+
+.portifolio figure figcaption {
+    font-size: 1.2em;
+}
+
+.img-portifolio {
+    width: 200px;
+    height: 200px;
+}
+
+figcaption {
+    color: #ffffff;
 }
