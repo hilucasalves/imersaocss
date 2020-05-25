@@ -6,36 +6,50 @@
 }
 
 body {
-    background-color: #4682B4;
-    background-size: 100vw 100vh;
+    background-color: #104E8B;
+    background-size: auto 100vh;
     font-family: 'Roboto', sans-serif;
+    font-size: 14px;
     height: 100vh;
-    font-size: 12px;
+    color: #F5F5F5;
 }
 
-/* se a tela tiver pelo menos 400px vai carregar estes estilos */
-@media (min-width: 400px) {
+/* min-width: 480px */
+@media (min-width: 480px) {
     body {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
-/* breakpoint */
-@media (min-width: 600px) {
+/* min-width: 720px */
+@media (min-width: 720px) {
     body {
         font-size: 18px;
     }
 }
 
+/* min-width: 1080px */
+@media (min-width: 1080px) {
+    body {
+        font-size: 20px;
+    }
+
+    .container {
+        max-width: 1080px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 header {
-    height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .menu {
-    background-color: #ffffff;
+    background-color: #F5F5F5;
     position: fixed;
     top: 0;
     width: 100vw;
@@ -53,31 +67,25 @@ header {
 
 .menu a {
     display: block;
-    padding: 10px 20px;
+    padding: 0.3em 0.6em;
+    transition: background-color 600ms, color 600ms;
+    text-decoration: none;
+    color: #104E8B;
 }
 
 .menu a:hover {
-    color: #ffffff;
-    background-color: #4682B4;
+    color: #F5F5F5;
+    background-color: #104E8B;
 }
 
 .menu a:active {
-    color: #4682B4;
-    background-color: #B0C4DE;
-}
-
-a {
-    color: #4682B4;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    color: #104E8B;
+    background-color: #DCDCDC;
 }
 
 .site-title,
 .site-subtitle {
-    color: #FFFAFA;
+    color: #F5F5F5;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -87,94 +95,122 @@ a:hover {
 }
 
 .site-subtitle {
+    font-size: 2em;
     font-style: italic;
 }
 
+.site-title-principal {
+    opacity: 0;
+    animation: animacaoTitulo 2s linear 600ms 1 forwards;
+  }
+
+  @keyframes animacaoTitulo {
+      0% {opacity: 0;}
+      25% {opacity: 0.25;}
+      50% {opacity: 0.5;}
+      75% {opacity: 0.75;}
+      100% {opacity: 1;}
+  }
+
 .sobre,
-.portifolio,
+.portfolio,
 .contato {
-    color: #FFFAFA;
     padding: 1em;
     min-height: 100vh;
 }
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
 .sobre h2,
-.portifolio h2,
+.portfolio h2,
 .contato h2 {
     margin-top: 2em;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
     text-align: center;
 }
 
 .sobre figure {
-    float: right;
-    margin-left: 1em;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    text-align: center;
+    margin-bottom: 0.6em;
+}
+
+@media (min-width: 720px) {
+    .sobre figure {
+        float: right;
+        margin-left: 1em;
+    }
 }
 
 .sobre figure img {
     width: 250px;
     height: 250px;
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
 .sobre p {
-    color: whitesmoke;
-    text-indent: 2em;
+    text-indent: 1em;
     text-align: justify;
-    margin-bottom: 1.4em;
+    margin-bottom: 1em;
 }
 
-.portifolio .grid {
+.portfolio .grid {
     display: grid;
-    gap: 4em;
-    justify-content: center;
+    gap: 3em;
+    align-content: center;
+    justify-content: space-around;
 }
 
-@media (min-width: 560px) {
-    .portifolio .grid {
-        grid-template-columns: repeat(3, 200px);
+@media (min-width: 480px) {
+    .portfolio .grid {
+        grid-template-columns: repeat(2, 160px);
     }
 }
 
-.portifolio figure {
+@media (min-width: 720px) {
+    .portfolio .grid {
+        grid-template-columns: repeat(3, 160px);
+    }
+}
+
+@media (min-width: 1080px) {
+    .portfolio .grid {
+        grid-template-columns: repeat(3, 160px);
+    }
+}
+
+.portfolio figure {
     text-align: center;
 }
 
-.portifolio figure figcaption {
-    font-size: 1.2em;
+.portfolio figure figcaption {
+    margin-top: 1em;
 }
 
-.img-portifolio {
-    width: 200px;
-    height: 200px;
+.img-portfolio {
+    height: 150px;
+    width: 180px;
     transition: transform 300ms;
 }
 
-.img-portifolio:hover {
-    transform: scale(0.9);
-}
-
-figcaption {
-    color: #ffffff;
-}
-
-.contato {
-    text-align: center;
+.img-portfolio:hover {
+    transform: scale(1.2);
 }
 
 .contato .grid {
     display: grid;
     gap: 6em;
+    align-content: center;
     justify-content: center;
-    grid-template-columns: repeat(4, 100px);
+}
+
+@media (min-width: 480px) {
+    .contato .grid {
+        grid-template-columns: repeat(2, 80px);
+    }
+}
+
+@media (min-width: 720px) {
+    .contato .grid {
+        grid-template-columns: repeat(4, 80px);
+    }
 }
 
 .contato .grid a {
@@ -186,6 +222,23 @@ figcaption {
 }
 
 .contato .grid a img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+}
+
+footer a {
+    background-color: #F5F5F5;
+    color: #104E8B;
+    text-decoration: none;
+}
+
+footer a:hover {
+    background-color: #F5F5F5;
+    color: #104E8B;
+    text-decoration: underline;
 }
