@@ -1,2 +1,2 @@
 # imersaocss
-Aulas de CSS pela Alura Cursos
+CSS classes by Alura Cursos
